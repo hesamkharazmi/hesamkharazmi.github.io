@@ -28,8 +28,8 @@ The website is automatically deployed via GitHub Pages. To set up a local versio
    ```bash
    git clone https://github.com/hesamkharazmi/hesamkharazmi.github.io.git
    ```
-   Navigate to the repository directory:
-```bash
-cd hesamkharazmi.github.io
-```
+2. Navigate to the repository directory:
+   ```bash
+   cd hesamkharazmi.github.io
+   ```
 Open index.html in your browser to view the website.
