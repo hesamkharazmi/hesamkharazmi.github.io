@@ -27,6 +27,39 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .form-message {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 
 <body>
@@ -368,32 +401,31 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="https://github-io.liara.run/contact" method="POST" class="email-form">
-                            <input type="text" name="website" style="display:none">
-
+                        <div id="form-messages" class="form-message"></div>
+                        <form id="contact-form" class="email-form">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label>Your Name</label>
-                                    <input type="text" name="name" class="form-control" required>
+                                    <label for="name">Your Name</label>
+                                    <input type="text" name="name" id="name" class="form-control" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label>Your Email</label>
-                                    <input type="email" name="email" class="form-control" required>
+                                    <label for="email">Your Email</label>
+                                    <input type="email" name="email" id="email" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label>Subject</label>
-                                <input type="text" name="subject" class="form-control" required>
+                                <label for="subject">Subject</label>
+                                <input type="text" name="subject" id="subject" class="form-control" required>
                             </div>
 
                             <div class="form-group">
-                                <label>Message</label>
-                                <textarea name="message" rows="8" class="form-control" required></textarea>
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="8" class="form-control" required></textarea>
                             </div>
 
                             <div class="text-center">
-                                <button type="submit">Send Message</button>
+                                <button type="submit" id="submit-btn">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -422,10 +454,65 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/typed.js/typed.umd.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const formMessages = document.getElementById('form-messages');
+            const submitBtn = document.getElementById('submit-btn');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<div class="loading"></div>Sending...';
+
+                formMessages.style.display = 'none';
+                formMessages.className = 'form-message';
+
+                const formData = new FormData(this);
+
+                fetch('https://github-io.liara.run/contact', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                    throw new Error('Network response was not ok');
+                })
+                .then(data => {
+                    formMessages.className = 'form-message success-message';
+                    formMessages.textContent = 'Thank you! Your message has been sent successfully.';
+                    formMessages.style.display = 'block';
+                    
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        formMessages.style.display = 'none';
+                    }, 5000);
+                })
+                .catch(error => {
+                    formMessages.className = 'form-message error-message';
+                    formMessages.textContent = 'Sorry, there was an error sending your message. Please try again later.';
+                    formMessages.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        formMessages.style.display = 'none';
+                    }, 5000);
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
