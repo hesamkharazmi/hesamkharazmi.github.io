@@ -1,0 +1,16 @@
+# env files (SECURITY)
+.env
+contact-backend/.env
+
+# IDE junk
+.idea/
+.vscode/
+
+# Go build
+*.exe
+*.out
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
