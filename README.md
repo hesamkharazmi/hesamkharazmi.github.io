@@ -32,4 +32,4 @@ The website is automatically deployed via GitHub Pages. To set up a local versio
    ```bash
    cd hesamkharazmi.github.io
    ```
-Open index.html in your browser to view the website |
+Open index.html in your browser to view the website
