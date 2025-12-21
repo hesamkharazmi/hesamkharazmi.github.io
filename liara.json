@@ -1,0 +1,8 @@
+{
+  "app": "github-io",
+  "port": 8080,
+  "build": {
+    "location": "iran"
+  },
+  "disks": []
+}
