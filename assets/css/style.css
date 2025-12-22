@@ -62,19 +62,20 @@ h6 {
 }
 
 /* Header */
-#header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    transition: all ease-in-out 0.5s;
-    z-index: 9997;
-    transition: all 0.5s;
-    padding: 0 15px;
-    background: #040b14;
-    overflow-y: auto;
+#hero {
+  width: 100%;
+  height: 100svh;        
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  background: url("https://cdn.dribbble.com/userupload/24090455/file/original-44d2d037ca9a45179a5237197cd6c31f.gif")
+              center center no-repeat;
+  background-size: cover;
 }
+
 
 #header .profile img {
     margin: 15px auto;
@@ -128,6 +129,7 @@ h6 {
 .container-fluid {
     padding-left: 30px;
     padding-right: 30px;
+    
 }
 
 @media (max-width: 1199px) {
@@ -144,6 +146,22 @@ h6 {
         padding-left: 12px;
         padding-right: 12px;
     }
+}
+
+#hero {
+  z-index: 1;
+}
+
+@media (max-width: 1199px) {
+  #main {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+#hero .container {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 
