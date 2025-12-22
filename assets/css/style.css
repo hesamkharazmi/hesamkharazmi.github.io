@@ -268,9 +268,9 @@ h6 {
 #hero {
     width: 100%;
     height: 100vh;
-    background: url("https://cdn.dribbble.com/userupload/24090455/file/original-44d2d037ca9a45179a5237197cd6c31f.gif") top center;
-    background-size: contain;
-    background-position: top right;
+    background: url("https://www.pinsentmasons.com/-/media/images/seo-social-media/themes/digital-data-cyber/cloud-computing-concept.png?h=630&w=1200&hash=B3FCD032BD0C49EB2898C481394C6822") top center;
+    background-size: cover;
+    background-position: left;
     background-repeat: no-repeat;
 }
 
@@ -1400,11 +1400,4 @@ section {
   }
 }
 
-[data-aos] {
-  opacity: 0;
-  transition-property: transform, opacity;
-}
 
-[data-aos].aos-animate {
-  opacity: 1;
-}
