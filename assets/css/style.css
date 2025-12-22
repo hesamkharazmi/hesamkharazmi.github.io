@@ -149,15 +149,9 @@ h6 {
 }
 
 #hero {
-  z-index: 1;
+  z-index: 1000;
 }
 
-@media (max-width: 1199px) {
-  #main {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-}
 
 #hero .container {
   margin-top: 0;
