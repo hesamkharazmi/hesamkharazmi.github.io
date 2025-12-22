@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Projects | Hesamoddin Kharazmipour</title>
-  <meta content="Projects by Hesamoddin Kharazmipour" name="description">
+  <title>Selected Projects</title>
+  <meta name="description" content="Projects by Hesamoddin Kharazmipour">
   <meta name="author" content="Hesamoddin Kharazmipour">
 
   <!-- Favicons -->
@@ -23,128 +22,217 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Page-only polish (safe + professional) -->
+  <style>
+    .project-heading{
+      font-size: 26px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      color: #173b6c;
+      border-left: 4px solid #149ddd;
+      padding-left: 12px;
+    }
+    .project-meta{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .project-meta h5{
+      margin: 0;
+    }
+    .project-links a{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 14px;
+      font-weight: 600;
+    }
+    @media (max-width: 768px){
+      .project-heading{ font-size: 22px; }
+      .resume .resume-item ul{ padding-left: 18px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Mobile nav toggle -->
-<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <!-- Mobile nav toggle -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-<!-- ======= Header ======= -->
-<header id="header">
-  <div class="d-flex flex-column">
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
 
-    <div class="profile">
-      <img src="https://avatars.githubusercontent.com/u/136222636?s=400"
-           alt=""
-           class="img-fluid rounded-circle">
-      <h1 class="text-light text-center">
-        <a href="index.html">Hesamoddin Kharazmipour</a>
-      </h1>
+      <div class="profile">
+        <img src="https://avatars.githubusercontent.com/u/136222636?s=400" alt="Profile" class="img-fluid rounded-circle">
+        <h1 class="text-light text-center">
+          <a href="index.html">Hesamoddin Kharazmipour</a>
+        </h1>
 
-      <div class="social-links mt-3 text-center">
-        <a href="https://github.com/hesamkharazmi" class="github"><i class="bx bxl-github"></i></a>
-        <a href="https://www.hackerrank.com/profile/hesamkharazmiii" target="_blank" class="hackerrank">
-          <i class="bx bx-code-alt"></i>
-        </a>
-        <a href="https://stackoverflow.com/users/20820041" class="stackoverflow"><i class="bx bxl-stack-overflow"></i></a>
-        <a href="https://www.linkedin.com/in/hesam-kharazmipour/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/hesamkharazmi" class="github" target="_blank" rel="noopener">
+            <i class="bx bxl-github"></i>
+          </a>
+          <a href="https://www.hackerrank.com/profile/hesamkharazmiii" class="hackerrank" target="_blank" rel="noopener">
+            <i class="bx bx-code-alt"></i>
+          </a>
+          <a href="https://stackoverflow.com/users/20820041" class="stackoverflow" target="_blank" rel="noopener">
+            <i class="bx bxl-stack-overflow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/hesam-kharazmipour/" class="linkedin" target="_blank" rel="noopener">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="projects.html" class="active"><i class="bx bx-code-curly"></i> <span>Projects</span></a></li>
+          <li><a href="index.html#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Projects Section ======= -->
+    <section id="projects" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Selected academic, personal, and technical projects</p>
+        </div>
+        
+        <h3 class="project-heading" data-aos="fade-up">Machine Learning & Data Science</h3>
+
+        <div class="resume-item" data-aos="fade-up">
+          <h4>Customer Churn Prediction</h4>
+
+          <div class="project-meta">
+            
+            <p><em>Python, Pandas, Scikit-learn</em></p>
+          </div>
+
+          <ul>
+            <li>Built an end-to-end ML pipeline (cleaning → features → training → evaluation).</li>
+            <li>Compared multiple models and tuned hyperparameters for best ROC-AUC.</li>
+            <li>Delivered explainability (feature importance) + a short report for insights.</li>
+          </ul>
+
+          <div class="project-links">
+            <a href="https://github.com/your-repo" target="_blank" rel="noopener">
+              <i class="bx bxl-github"></i> GitHub
+            </a>
+            <a href="#" target="_blank" rel="noopener">
+              <i class="bx bx-link-external"></i> Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="resume-item" data-aos="fade-up">
+          <h4>Text Classification / NLP Project</h4>
+
+          <div class="project-meta">
+            
+            <p><em>Python, NLP, Transformers / TF-IDF</em></p>
+          </div>
+
+          <ul>
+            <li>Implemented preprocessing, vectorization, and baseline vs advanced models.</li>
+            <li>Tracked metrics and experiments; documented what worked and why.</li>
+            <li>Packaged code so it runs with one command.</li>
+          </ul>
+
+          <div class="project-links">
+            <a href="https://github.com/your-repo" target="_blank" rel="noopener">
+              <i class="bx bxl-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- ===================== -->
+        <!-- Software Engineering SECOND -->
+        <!-- ===================== -->
+        <h3 class="project-heading mt-5" data-aos="fade-up">Software Engineering</h3>
+
+        <div class="resume-item" data-aos="fade-up">
+          <h4>Backend Authentication Service</h4>
+
+          <div class="project-meta">
+          
+            <p><em>Golang, REST, JWT, PostgreSQL</em></p>
+          </div>
+
+          <ul>
+            <li>Designed REST APIs with JWT auth + refresh tokens, plus RBAC.</li>
+            <li>Applied clean architecture (handlers/services/repo) for maintainability.</li>
+            <li>Added tests + basic CI to keep quality consistent.</li>
+          </ul>
+
+          <div class="project-links">
+            <a href="https://github.com/your-repo" target="_blank" rel="noopener">
+              <i class="bx bxl-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="resume-item" data-aos="fade-up">
+          <h4>Full-Stack Portfolio / Personal Site</h4>
+
+          <div class="project-meta">
+            <p><em>HTML, CSS, JS, Bootstrap</em></p>
+          </div>
+
+          <ul>
+            <li>Built a responsive personal website with clean sections and navigation.</li>
+            <li>Improved mobile layout, performance, and accessibility basics.</li>
+            <li>Deployed with a simple workflow (GitHub Pages / hosting).</li>
+          </ul>
+
+          <div class="project-links">
+            <a href="https://github.com/your-repo" target="_blank" rel="noopener">
+              <i class="bx bxl-github"></i> GitHub
+            </a>
+            <a href="#" target="_blank" rel="noopener">
+              <i class="bx bx-link-external"></i> Live
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Projects Section -->
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
       </div>
     </div>
+  </footer>
 
-    <nav id="navbar" class="nav-menu navbar">
-      <ul>
-        <li><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="projects.html" class="active"><i class="bx bx-code-curly"></i> <span>Projects</span></a></li>
-        <li><a href="index.html#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-      </ul>
-    </nav>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
-  </div>
-</header>
-<!-- End Header -->
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-  <div class="hero-container" data-aos="fade-in">
-    <h1>Projects</h1>
-    <p>Things I’ve built, learned from, and shipped</p>
-  </div>
-</section>
-<!-- End Hero -->
-
-<main id="main">
-
-<!-- ======= Projects Section ======= -->
-<section id="projects" class="resume">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Projects</h2>
-      <p>Selected academic, personal, and technical projects</p>
-    </div>
-
-    <!-- Project Item -->
-    <div class="resume-item" data-aos="fade-up">
-      <h4>Project Title</h4>
-      <h5>2024</h5>
-      <p><em>Python, Machine Learning</em></p>
-      <ul>
-        <li>Brief explanation of the problem</li>
-        <li>What you built and how it works</li>
-        <li>Key technologies and techniques used</li>
-        <li>
-          <a href="https://github.com/your-repo" target="_blank">
-            <i class="bx bxl-github"></i> GitHub Repository
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Project Item -->
-    <div class="resume-item" data-aos="fade-up">
-      <h4>Another Project</h4>
-      <h5>2023</h5>
-      <p><em>Golang, Backend</em></p>
-      <ul>
-        <li>Designed and implemented backend services</li>
-        <li>RESTful APIs with authentication</li>
-        <li>Focus on clean architecture and scalability</li>
-        <li>
-          <a href="https://github.com/your-repo" target="_blank">
-            <i class="bx bxl-github"></i> GitHub Repository
-          </a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-<!-- End Projects Section -->
-
-</main>
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong><span>iPortfolio</span></strong>
-    </div>
-  </div>
-</footer>
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-  <i class="bi bi-arrow-up-short"></i>
-</a>
-
-<!-- Vendor JS Files -->
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
-
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

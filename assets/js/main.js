@@ -127,20 +127,29 @@
   });
 
   /**
-   * Hero type effect
-   */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
+ * Hero type effect (optimized – no initial delay)
+ */
+const typedEl = select('.typed');
+
+if (typedEl) {
+  const typedStrings = typedEl
+    .getAttribute('data-typed-items')
+    .split(',')
+    .map(s => s.trim());
+
+  setTimeout(() => {
     new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
+      strings: typedStrings,
+      typeSpeed: 50,
       backSpeed: 50,
-      backDelay: 2000
+      backDelay: 1200,
+      startDelay: 15,
+      loop: true,
+      showCursor: true
     });
-  }
+  }, 1000); 
+}
+
 
   /**
    * Skills animation

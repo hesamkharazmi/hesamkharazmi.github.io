@@ -1330,3 +1330,77 @@ section {
         padding-right: 20px 15px;
     }
 }
+
+
+/* ===============================
+   Projects Page – Custom Styling
+   =============================== */
+
+/* Category heading (ML first, then Software) */
+.project-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 50px 0 25px;
+  color: #173b6c;
+  border-left: 4px solid #149ddd;
+  padding-left: 12px;
+}
+
+/* Extra spacing between categories */
+.project-category {
+  margin-top: 40px;
+}
+
+/* Project meta row (year + tech stack) */
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.project-meta h5 {
+  margin: 0;
+}
+
+/* Links under each project */
+.project-links {
+  margin-top: 10px;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Make resume items breathe more on Projects page */
+#projects .resume-item {
+  padding-bottom: 25px;
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+  .project-heading {
+    font-size: 22px;
+    margin: 40px 0 20px;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-links a {
+    margin-bottom: 6px;
+  }
+}
+
+[data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
