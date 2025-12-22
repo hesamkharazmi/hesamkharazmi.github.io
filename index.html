@@ -406,9 +406,10 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="https://github-io.liara.run/contact" method="POST" class="email-form">
+                        <div id="form-messages" class="form-message"></div>
+                        <form id="contact-form" class="email-form">
                             <input type="text" name="website" style="display:none">
-
+                            
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label>Your Name</label>
@@ -464,6 +465,62 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-</body>
 
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contact-form');
+    const formMessages = document.getElementById('form-messages');
+    const submitBtn = document.getElementById('submit-btn');
+
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<div class="loading"></div>Sending...';
+
+        formMessages.style.display = 'none';
+        formMessages.className = 'form-message';
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('https://github-io.liara.run/contact', {
+                method: 'POST',
+                body: formData
+            });
+
+            let data = null;
+            try {
+                data = await response.json();
+            } catch (e) {
+                // response was not JSON
+            }
+
+            if (response.ok && data?.success) {
+                formMessages.className = 'form-message success-message';
+                formMessages.textContent = data.message || 'Message sent successfully.';
+                formMessages.style.display = 'block';
+                contactForm.reset();
+            } else {
+                formMessages.className = 'form-message error-message';
+                formMessages.textContent =
+                    data?.message || `Error (${response.status})`;
+                formMessages.style.display = 'block';
+            }
+
+        } catch (error) {
+            console.error('Network error:', error);
+            formMessages.className = 'form-message error-message';
+            formMessages.textContent = 'Network error. Please try again.';
+            formMessages.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        }
+    });
+});
+</script>
+
+</body>
 </html>
