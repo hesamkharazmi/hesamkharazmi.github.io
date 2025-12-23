@@ -1503,3 +1503,30 @@ section {
   background-color: #aba9a9;
   margin: 30px 0;
 }
+
+
+
+
+.project-status {
+    display: inline-flex;          /* مهم */
+    align-items: center;
+    width: fit-content;            /* مهم */
+    max-width: 100%;
+    margin-top: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 14px;
+    border: 1px solid #c7d2fe;
+    color: #1e3a8a;
+    background-color: #eff6ff;
+}
+
+
+.project-status.in-progress {
+    border-color: #93c5fd;
+    color: #1e3a8a;
+    background-color: #eff6ff;
+}
+
+
